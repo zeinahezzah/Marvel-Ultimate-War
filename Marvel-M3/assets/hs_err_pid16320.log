@@ -1,0 +1,324 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 32756 bytes for ChunkPool::allocate
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:273), pid=16320, tid=12064
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_31-b13) (build 1.8.0_31-b13)
+# Java VM: Java HotSpot(TM) Client VM (25.31-b07 mixed mode windows-x86 )
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0291bc00):  JavaThread "main" [_thread_in_vm, id=12064, stack(0x02660000,0x026b0000)]
+
+Stack: [0x02660000,0x026b0000],  sp=0x026ae114,  free space=312k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x197b8b]
+V  [jvm.dll+0x190a28]
+V  [jvm.dll+0x81959]
+V  [jvm.dll+0x81bcf]
+V  [jvm.dll+0x81f2a]
+V  [jvm.dll+0x98774]
+V  [jvm.dll+0x53373]
+V  [jvm.dll+0xaa32d]
+V  [jvm.dll+0xb2a20]
+V  [jvm.dll+0xb5014]
+V  [jvm.dll+0xb54b8]
+V  [jvm.dll+0x76361]
+j  sun.awt.FontConfiguration.get2DCompositeFontInfo()[Lsun/font/CompositeFontDescriptor;+651
+j  sun.font.SunFontManager.initCompositeFonts(Lsun/awt/FontConfiguration;Ljava/util/concurrent/ConcurrentHashMap;)V+120
+j  sun.font.SunFontManager.access$700(Lsun/font/SunFontManager;Lsun/awt/FontConfiguration;Ljava/util/concurrent/ConcurrentHashMap;)V+3
+j  sun.font.SunFontManager$2.run()Ljava/lang/Object;+645
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x1473e5]
+V  [jvm.dll+0x20d57e]
+V  [jvm.dll+0x14747e]
+V  [jvm.dll+0xfc80f]
+C  [java.dll+0x1015]
+j  sun.font.SunFontManager.<init>()V+222
+j  sun.awt.Win32FontManager.<init>()V+1
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x1473e5]
+V  [jvm.dll+0x20d57e]
+V  [jvm.dll+0x14747e]
+V  [jvm.dll+0x153a6a]
+V  [jvm.dll+0x153e01]
+V  [jvm.dll+0xf5848]
+C  [java.dll+0x3a89]
+j  sun.reflect.NativeConstructorAccessorImpl.newInstance([Ljava/lang/Object;)Ljava/lang/Object;+85
+j  sun.reflect.DelegatingConstructorAccessorImpl.newInstance([Ljava/lang/Object;)Ljava/lang/Object;+5
+j  java.lang.reflect.Constructor.newInstance([Ljava/lang/Object;)Ljava/lang/Object;+79
+j  java.lang.Class.newInstance()Ljava/lang/Object;+138
+j  sun.font.FontManagerFactory$1.run()Ljava/lang/Object;+21
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x1473e5]
+V  [jvm.dll+0x20d57e]
+V  [jvm.dll+0x14747e]
+V  [jvm.dll+0xfc80f]
+C  [java.dll+0x1015]
+j  sun.font.FontManagerFactory.getInstance()Lsun/font/FontManager;+17
+j  sun.font.SunFontManager.getInstance()Lsun/font/SunFontManager;+0
+j  sun.awt.PlatformFont.<init>(Ljava/lang/String;I)V+4
+j  sun.awt.windows.WFontPeer.<init>(Ljava/lang/String;I)V+3
+j  sun.awt.windows.WToolkit.getFontPeer(Ljava/lang/String;I)Ljava/awt/peer/FontPeer;+59
+j  java.awt.Font.getPeer_NoClientCode()Ljava/awt/peer/FontPeer;+21
+j  java.awt.Font.getPeer()Ljava/awt/peer/FontPeer;+1
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x1473e5]
+V  [jvm.dll+0x20d57e]
+V  [jvm.dll+0x14747e]
+V  [jvm.dll+0xd0e67]
+V  [jvm.dll+0xd285c]
+C  [awt.dll+0x703a2]
+C  [awt.dll+0x762e9]
+C  [awt.dll+0xa4119]
+j  sun.awt.windows.WComponentPeer._setFont(Ljava/awt/Font;)V+0
+j  sun.awt.windows.WComponentPeer.setFont(Ljava/awt/Font;)V+7
+j  sun.awt.windows.WWindowPeer.initialize()V+44
+j  sun.awt.windows.WFramePeer.initialize()V+1
+j  sun.awt.windows.WComponentPeer.<init>(Ljava/awt/Component;)V+83
+j  sun.awt.windows.WCanvasPeer.<init>(Ljava/awt/Component;)V+2
+j  sun.awt.windows.WPanelPeer.<init>(Ljava/awt/Component;)V+2
+j  sun.awt.windows.WWindowPeer.<init>(Ljava/awt/Window;)V+2
+j  sun.awt.windows.WFramePeer.<init>(Ljava/awt/Frame;)V+2
+j  sun.awt.windows.WToolkit.createFrame(Ljava/awt/Frame;)Ljava/awt/peer/FramePeer;+5
+j  java.awt.Frame.addNotify()V+20
+j  java.awt.Window.show()V+8
+j  java.awt.Component.show(Z)V+5
+j  java.awt.Component.setVisible(Z)V+2
+j  java.awt.Window.setVisible(Z)V+2
+j  view.GameView.<init>()V+27
+j  view.GameView.main([Ljava/lang/String;)V+3
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x1473e5]
+V  [jvm.dll+0x20d57e]
+V  [jvm.dll+0x14747e]
+V  [jvm.dll+0xd0c27]
+V  [jvm.dll+0xd91cf]
+C  [javaw.exe+0x210a]
+C  [javaw.exe+0xaba1]
+C  [javaw.exe+0xac2b]
+C  [KERNEL32.DLL+0x1fa29]
+C  [ntdll.dll+0x67a7e]
+C  [ntdll.dll+0x67a4e]
+C  0x00000000
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  sun.awt.FontConfiguration.get2DCompositeFontInfo()[Lsun/font/CompositeFontDescriptor;+651
+j  sun.font.SunFontManager.initCompositeFonts(Lsun/awt/FontConfiguration;Ljava/util/concurrent/ConcurrentHashMap;)V+120
+j  sun.font.SunFontManager.access$700(Lsun/font/SunFontManager;Lsun/awt/FontConfiguration;Ljava/util/concurrent/ConcurrentHashMap;)V+3
+j  sun.font.SunFontManager$2.run()Ljava/lang/Object;+645
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;)Ljava/lang/Object;+0
+j  sun.font.SunFontManager.<init>()V+222
+j  sun.awt.Win32FontManager.<init>()V+1
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeConstructorAccessorImpl.newInstance0(Ljava/lang/reflect/Constructor;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeConstructorAccessorImpl.newInstance([Ljava/lang/Object;)Ljava/lang/Object;+85
+j  sun.reflect.DelegatingConstructorAccessorImpl.newInstance([Ljava/lang/Object;)Ljava/lang/Object;+5
+j  java.lang.reflect.Constructor.newInstance([Ljava/lang/Object;)Ljava/lang/Object;+79
+j  java.lang.Class.newInstance()Ljava/lang/Object;+138
+j  sun.font.FontManagerFactory$1.run()Ljava/lang/Object;+21
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;)Ljava/lang/Object;+0
+j  sun.font.FontManagerFactory.getInstance()Lsun/font/FontManager;+17
+j  sun.font.SunFontManager.getInstance()Lsun/font/SunFontManager;+0
+j  sun.awt.PlatformFont.<init>(Ljava/lang/String;I)V+4
+j  sun.awt.windows.WFontPeer.<init>(Ljava/lang/String;I)V+3
+j  sun.awt.windows.WToolkit.getFontPeer(Ljava/lang/String;I)Ljava/awt/peer/FontPeer;+59
+j  java.awt.Font.getPeer_NoClientCode()Ljava/awt/peer/FontPeer;+21
+j  java.awt.Font.getPeer()Ljava/awt/peer/FontPeer;+1
+v  ~StubRoutines::call_stub
+j  sun.awt.windows.WComponentPeer._setFont(Ljava/awt/Font;)V+0
+j  sun.awt.windows.WComponentPeer.setFont(Ljava/awt/Font;)V+7
+j  sun.awt.windows.WWindowPeer.initialize()V+44
+j  sun.awt.windows.WFramePeer.initialize()V+1
+j  sun.awt.windows.WComponentPeer.<init>(Ljava/awt/Component;)V+83
+j  sun.awt.windows.WCanvasPeer.<init>(Ljava/awt/Component;)V+2
+j  sun.awt.windows.WPanelPeer.<init>(Ljava/awt/Component;)V+2
+j  sun.awt.windows.WWindowPeer.<init>(Ljava/awt/Window;)V+2
+j  sun.awt.windows.WFramePeer.<init>(Ljava/awt/Frame;)V+2
+j  sun.awt.windows.WToolkit.createFrame(Ljava/awt/Frame;)Ljava/awt/peer/FramePeer;+5
+j  java.awt.Frame.addNotify()V+20
+j  java.awt.Window.show()V+8
+j  java.awt.Component.show(Z)V+5
+j  java.awt.Component.setVisible(Z)V+2
+j  java.awt.Window.setVisible(Z)V+2
+j  view.GameView.<init>()V+27
+j  view.GameView.main([Ljava/lang/String;)V+3
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x15073400 JavaThread "AWT-EventQueue-0" [_thread_blocked, id=26204, stack(0x18120000,0x18170000)]
+  0x15012800 JavaThread "AWT-Windows" daemon [_thread_in_native, id=1596, stack(0x15770000,0x157c0000)]
+  0x15010800 JavaThread "AWT-Shutdown" [_thread_blocked, id=19360, stack(0x156a0000,0x156f0000)]
+  0x1500fc00 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=29372, stack(0x15610000,0x15660000)]
+  0x14ef3400 JavaThread "Service Thread" daemon [_thread_blocked, id=12924, stack(0x153a0000,0x153f0000)]
+  0x14efa800 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=20436, stack(0x15310000,0x15360000)]
+  0x14ef9400 JavaThread "Attach Listener" daemon [_thread_blocked, id=25348, stack(0x15280000,0x152d0000)]
+  0x14ef7400 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=16676, stack(0x151f0000,0x15240000)]
+  0x14ec4000 JavaThread "Finalizer" daemon [_thread_blocked, id=3560, stack(0x15150000,0x151a0000)]
+  0x0284e000 JavaThread "Reference Handler" daemon [_thread_blocked, id=8644, stack(0x150c0000,0x15110000)]
+=>0x0291bc00 JavaThread "main" [_thread_in_vm, id=12064, stack(0x02660000,0x026b0000)]
+
+Other Threads:
+  0x0284a800 VMThread [stack: 0x049b0000,0x04a00000] [id=9076]
+  0x14f17000 WatcherThread [stack: 0x15430000,0x15480000] [id=24880]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ def new generation   total 4928K, used 2599K [0x04a00000, 0x04f50000, 0x09f50000)
+  eden space 4416K,  58% used [0x04a00000, 0x04c89e70, 0x04e50000)
+  from space 512K,   0% used [0x04e50000, 0x04e50000, 0x04ed0000)
+  to   space 512K,   0% used [0x04ed0000, 0x04ed0000, 0x04f50000)
+ tenured generation   total 10944K, used 0K [0x09f50000, 0x0aa00000, 0x14a00000)
+   the space 10944K,   0% used [0x09f50000, 0x09f50000, 0x09f50200, 0x0aa00000)
+ Metaspace       used 4625K, capacity 4755K, committed 4864K, reserved 5504K
+
+Card table byte_map: [0x04920000,0x049b0000] byte_map_base: 0x048fb000
+
+Polling page: 0x00e50000
+
+CodeCache: size=32768Kb used=803Kb max_used=803Kb free=31964Kb
+ bounds [0x02920000, 0x029f0000, 0x04920000]
+ total_blobs=307 nmethods=115 adapters=124
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 0.166 Thread 0x14efa800 nmethod 108 0x029e46c8 code [0x029e47c0, 0x029e4840]
+Event: 0.166 Thread 0x14efa800  109             java.util.Arrays::binarySearch0 (95 bytes)
+Event: 0.166 Thread 0x14efa800 nmethod 109 0x029e4888 code [0x029e49a0, 0x029e4b08]
+Event: 0.166 Thread 0x14efa800  110             sun.java2d.loops.GraphicsPrimitiveMgr$2::compare (39 bytes)
+Event: 0.166 Thread 0x14efa800 nmethod 110 0x029e4c88 code [0x029e4d90, 0x029e4e90]
+Event: 0.172 Thread 0x14efa800  111             java.lang.AbstractStringBuilder::append (50 bytes)
+Event: 0.172 Thread 0x14efa800 nmethod 111 0x029e54c8 code [0x029e55e0, 0x029e5724]
+Event: 0.172 Thread 0x14efa800  112             sun.awt.FontConfiguration::contains (24 bytes)
+Event: 0.172 Thread 0x14efa800 nmethod 112 0x029e5888 code [0x029e5980, 0x029e5a50]
+Event: 0.173 Thread 0x14efa800  113   !         java.util.concurrent.ConcurrentHashMap::transfer (832 bytes)
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 0.060 Thread 0x0291bc00 Exception <a 'java/security/PrivilegedActionException'> (0x04a89cf8) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u31\2394\hotspot\src\share\vm\prims\jvm.cpp, line 1312]
+Event: 0.060 Thread 0x0291bc00 Exception <a 'java/security/PrivilegedActionException'> (0x04a89ea8) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u31\2394\hotspot\src\share\vm\prims\jvm.cpp, line 1312]
+Event: 0.060 Thread 0x0291bc00 Exception <a 'java/security/PrivilegedActionException'> (0x04aa3640) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u31\2394\hotspot\src\share\vm\prims\jvm.cpp, line 1312]
+Event: 0.060 Thread 0x0291bc00 Exception <a 'java/security/PrivilegedActionException'> (0x04aa37f0) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u31\2394\hotspot\src\share\vm\prims\jvm.cpp, line 1312]
+Event: 0.064 Thread 0x0291bc00 Exception <a 'java/io/FileNotFoundException'> (0x04aa5838) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u31\2394\hotspot\src\share\vm\prims\jni.cpp, line 716]
+Event: 0.078 Thread 0x0291bc00 Exception <a 'java/io/FileNotFoundException'> (0x04ac0ef8) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u31\2394\hotspot\src\share\vm\prims\jni.cpp, line 716]
+Event: 0.085 Thread 0x0291bc00 Exception <a 'java/lang/ClassNotFoundException': java/lang/Null> (0x04ad9bc8) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u31\2394\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 202]
+Event: 0.093 Thread 0x0291bc00 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x04b34b98) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u31\2394\hotspot\src\share\vm\prims\methodHandles.cpp, line 1159]
+Event: 0.094 Thread 0x0291bc00 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x04b42698) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u31\2394\hotspot\src\share\vm\prims\methodHandles.cpp, line 1159]
+Event: 0.095 Thread 0x0291bc00 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x04b45590) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u31\2394\hotspot\src\share\vm\prims\methodHandles.cpp, line 1159]
+
+Events (10 events):
+Event: 0.171 loading class sun/font/SunFontManager$FontRegistrationInfo
+Event: 0.171 loading class sun/font/SunFontManager$FontRegistrationInfo done
+Event: 0.171 loading class sun/awt/windows/WFontConfiguration
+Event: 0.171 loading class sun/awt/FontConfiguration
+Event: 0.171 loading class sun/awt/FontConfiguration done
+Event: 0.171 loading class sun/awt/windows/WFontConfiguration done
+Event: 0.172 loading class sun/awt/FontDescriptor
+Event: 0.172 loading class sun/awt/FontDescriptor done
+Event: 0.174 loading class sun/font/CompositeFontDescriptor
+Event: 0.174 loading class sun/font/CompositeFontDescriptor done
+
+
+Dynamic libraries:
+0x00930000 - 0x00960000 	D:\Setups\Eclipse JavaFX\jdk\bin\javaw.exe
+0x76f70000 - 0x77113000 	C:\Windows\SYSTEM32\ntdll.dll
+0x75440000 - 0x75530000 	C:\Windows\System32\KERNEL32.DLL
+0x750e0000 - 0x752f4000 	C:\Windows\System32\KERNELBASE.dll
+0x74e60000 - 0x74edb000 	C:\Windows\System32\ADVAPI32.dll
+0x75db0000 - 0x75e6f000 	C:\Windows\System32\msvcrt.dll
+0x75940000 - 0x759b6000 	C:\Windows\System32\sechost.dll
+0x75cf0000 - 0x75dae000 	C:\Windows\System32\RPCRT4.dll
+0x74f40000 - 0x750dc000 	C:\Windows\System32\USER32.dll
+0x74e40000 - 0x74e58000 	C:\Windows\System32\win32u.dll
+0x75be0000 - 0x75c03000 	C:\Windows\System32\GDI32.dll
+0x76dd0000 - 0x76eac000 	C:\Windows\System32\gdi32full.dll
+0x75c70000 - 0x75ceb000 	C:\Windows\System32\msvcp_win.dll
+0x76690000 - 0x767b0000 	C:\Windows\System32\ucrtbase.dll
+0x74c20000 - 0x74e30000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_a8625c1886757984\COMCTL32.dll
+0x74f00000 - 0x74f25000 	C:\Windows\System32\IMM32.DLL
+0x6f6e0000 - 0x6f79f000 	D:\Setups\Eclipse JavaFX\jdk\jre\bin\msvcr100.dll
+0x6d200000 - 0x6d5a4000 	D:\Setups\Eclipse JavaFX\jdk\jre\bin\client\jvm.dll
+0x76350000 - 0x76356000 	C:\Windows\System32\PSAPI.DLL
+0x74ba0000 - 0x74bc8000 	C:\Windows\SYSTEM32\WINMM.dll
+0x74b70000 - 0x74b78000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x764b0000 - 0x76513000 	C:\Windows\System32\WS2_32.dll
+0x71280000 - 0x7128c000 	D:\Setups\Eclipse JavaFX\jdk\jre\bin\verify.dll
+0x71250000 - 0x71271000 	D:\Setups\Eclipse JavaFX\jdk\jre\bin\java.dll
+0x71230000 - 0x71243000 	D:\Setups\Eclipse JavaFX\jdk\jre\bin\zip.dll
+0x76810000 - 0x76dc5000 	C:\Windows\System32\SHELL32.dll
+0x742a0000 - 0x748ac000 	C:\Windows\SYSTEM32\windows.storage.dll
+0x756c0000 - 0x75940000 	C:\Windows\System32\combase.dll
+0x74270000 - 0x74294000 	C:\Windows\SYSTEM32\Wldp.dll
+0x75b50000 - 0x75bd7000 	C:\Windows\System32\SHCORE.dll
+0x763b0000 - 0x763f5000 	C:\Windows\System32\shlwapi.dll
+0x74250000 - 0x74268000 	C:\Windows\SYSTEM32\profapi.dll
+0x6cbb0000 - 0x6ccf6000 	D:\Setups\Eclipse JavaFX\jdk\jre\bin\awt.dll
+0x762b0000 - 0x76346000 	C:\Windows\System32\OLEAUT32.dll
+0x739c0000 - 0x73a5f000 	C:\Windows\SYSTEM32\apphelp.dll
+0x73610000 - 0x73636000 	C:\Windows\system32\DWMAPI.DLL
+0x73a60000 - 0x73ad4000 	C:\Windows\system32\uxtheme.dll
+0x75300000 - 0x753d4000 	C:\Windows\System32\MSCTF.dll
+0x765a0000 - 0x76683000 	C:\Windows\System32\ole32.dll
+0x748b0000 - 0x748bf000 	C:\Windows\SYSTEM32\kernel.appcore.dll
+0x753e0000 - 0x7543f000 	C:\Windows\System32\bcryptPrimitives.dll
+0x674b0000 - 0x6763f000 	C:\Windows\system32\d3d9.dll
+0x6ee70000 - 0x6efe9000 	C:\Windows\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_393549dac595e659\igdumdim32.dll
+0x6eff0000 - 0x6f2e8000 	C:\Windows\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_393549dac595e659\igdgmm32.dll
+0x6eaf0000 - 0x6eb29000 	D:\Setups\Eclipse JavaFX\jdk\jre\bin\fontmanager.dll
+0x74920000 - 0x74aa8000 	C:\Windows\SYSTEM32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=Cp1252 
+java_command: view.GameView
+java_class_path (initial): D:\Zeina\Documents\GUC\4th Semester\CSEN 401\Game\Milestone 3\Marvel-M2\bin;D:\Setups\Eclipse JavaFX\plugins\org.junit_4.11.0.v201303080030\junit.jar;D:\Setups\Eclipse JavaFX\plugins\org.hamcrest.core_1.3.0.v201303031735.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Users\HP\AppData\Local\Microsoft\WindowsApps;
+USERNAME=Zeina
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 142 Stepping 12, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 8.1 , 64 bit Build 9600 
+
+CPU:total 8 (4 cores per cpu, 2 threads per core) family 6 model 142 stepping 12, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2
+
+Memory: 4k page, physical 16545128k(8280772k free), swap 18642280k(4116k free)
+
+vm_info: Java HotSpot(TM) Client VM (25.31-b07) for windows-x86 JRE (1.8.0_31-b13), built on Dec 17 2014 20:46:12 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Mon May 30 21:18:42 2022
+elapsed time: 0 seconds (0d 0h 0m 0s)
+
