@@ -2350,7 +2350,7 @@ public class M1PrivateTests {
 		Object createdGame = gameConstructor.newInstance(firstPlayer, secondPlayer);
 
 		Method m = createdGame.getClass().getMethod("loadAbilities", String.class);
-		m.invoke(createdGame, "Abilities.csv");
+		m.invoke(createdGame, "assets/Abilities.csv");
 
 		Constructor<?> dmgAbilityConstructor = Class.forName(dmgPath).getConstructor(String.class, int.class, int.class,
 				int.class, Class.forName(areaOfEffectPath), int.class, int.class);
@@ -2361,7 +2361,7 @@ public class M1PrivateTests {
 
 		String line = "";
 
-		BufferedReader br = new BufferedReader(new FileReader("Abilities.csv"));
+		BufferedReader br = new BufferedReader(new FileReader("assets/Abilities.csv"));
 		while ((line = br.readLine()) != null) {
 			String[] row = line.split(",");
 			Object item = null;
@@ -2469,7 +2469,7 @@ public class M1PrivateTests {
 		Object createdGame = gameConstructor.newInstance(firstPlayer, secondPlayer);
 
 		Method m = createdGame.getClass().getMethod("loadAbilities", String.class);
-		m.invoke(createdGame, "Abilities.csv");
+		m.invoke(createdGame, "assets/Abilities.csv");
 
 		Method m2 = createdGame.getClass().getMethod("loadChampions", String.class);
 		m2.invoke(createdGame, "test_champions.csv");
@@ -2576,13 +2576,13 @@ public class M1PrivateTests {
 		Object createdGame = gameConstructor.newInstance(firstPlayer, secondPlayer);
 
 		Method m = createdGame.getClass().getMethod("loadAbilities", String.class);
-		m.invoke(createdGame, "Abilities.csv");
+		m.invoke(createdGame, "assets/Abilities.csv");
 		Field field = Class.forName(gamePath).getDeclaredField("availableAbilities");
 		field.setAccessible(true);
 		ArrayList<Object> availableAbilities = (ArrayList<Object>) field.get(createdGame);
 
 		Method m2 = createdGame.getClass().getMethod("loadChampions", String.class);
-		m2.invoke(createdGame, "Champions.csv");
+		m2.invoke(createdGame, "assets/Champions.csv");
 
 		ArrayList<Object> champions = new ArrayList<Object>();
 
@@ -2597,7 +2597,7 @@ public class M1PrivateTests {
 
 		String line = "";
 		try {
-			BufferedReader br = new BufferedReader(new FileReader("Champions.csv"));
+			BufferedReader br = new BufferedReader(new FileReader("assets/Champions.csv"));
 			while ((line = br.readLine()) != null) {
 				String[] row = line.split(",");
 

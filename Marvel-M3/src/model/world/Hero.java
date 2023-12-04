@@ -38,10 +38,6 @@ public class Hero extends Champion {
 		
 	}
 
-
-//	public String toString(){
-//		return "Hero \n" + super.toString();
-//	}
 	@Override
 	public String getType() {
 		return "Hero";

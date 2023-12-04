@@ -43,15 +43,8 @@ public class PriorityQueue {
 		return nItems;
 	}
 	
-	
-	
-	
 	public Comparable[] getElements() {
 		return elements;
 	}
 
-//	public Object[] order(){
-//		Object[] o = elements;
-//		return o;
-//	}
 }

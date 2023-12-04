@@ -57,18 +57,11 @@ public class GameController {
 
 	public GameController() {
 		view = new MainView();
-		
-		
-		
-		
-		//HomePage home = new HomePage();
-		//home.getStart().addActionListener(view);
-		//game = new Game(view.getP1(), view.getP2());
 	}
 	
 	public static void enterNames(){
 		
-		String soundName = "click.wav";    
+		String soundName = "assets/click.wav";    
 		AudioInputStream audioInputStream;
 		try {
 			audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
@@ -95,7 +88,7 @@ public class GameController {
 	
 	public static void getNames(){
 		
-		String soundName = "click.wav";    
+		String soundName = "assets/click.wav";    
 		AudioInputStream audioInputStream;
 		try {
 			audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
@@ -112,8 +105,8 @@ public class GameController {
 		
 		game = new Game(p1,p2);
 		try {
-			game.loadAbilities("Abilities.csv");
-			game.loadChampions("Champions.csv");
+			game.loadAbilities("assets/Abilities.csv");
+			game.loadChampions("assets/Champions.csv");
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -134,7 +127,7 @@ public class GameController {
 	
 	public static void selectChamps(){
 		
-		String soundName = "click.wav";    
+		String soundName = "assets/click.wav";    
 		AudioInputStream audioInputStream;
 		try {
 			audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
@@ -164,44 +157,6 @@ public class GameController {
 			view.add(team);
 		}
 	}
-//	
-//	public static void load(){
-//		
-//		if(p1.getLeader() == null || p2.getLeader() == null){
-//			JOptionPane.showMessageDialog(null, "Please Select Your Leaders", "ERROR", JOptionPane.ERROR_MESSAGE);
-//		}
-//		
-//		else{
-//		
-//		String soundName = "click.wav";    
-//		AudioInputStream audioInputStream;
-//		try {
-//			audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
-//			next = AudioSystem.getClip();
-//			next.open(audioInputStream);
-//		} catch (Exception e2) {
-//			// TODO Auto-generated catch block
-//			e2.printStackTrace();
-//		}
-//		
-//		next.start();
-//		
-//		view.getTeam().setVisible(false);
-//		
-//		LoadingPage load = new LoadingPage();
-//		
-//		
-//		view.setLoad(load);
-//		
-//	//	view.add(load);
-//		
-//		//view.load();		
-//		
-////		view.repaint();
-////		view.revalidate();
-//	
-//		}
-//	}
 	
 	public static void startGame(){
 		
@@ -217,7 +172,7 @@ public class GameController {
 			}
 			
 			else{
-				String soundName = "click.wav";    
+				String soundName = "assets/click.wav";    
 				AudioInputStream audioInputStream;
 				try {
 					audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
@@ -228,11 +183,6 @@ public class GameController {
 					// TODO Auto-generated catch block
 					e2.printStackTrace();
 				}
-
-				//new LoadingPage();
-			
-			//new LoadingPage();
-			//GameController.startGame();	
 			
 			view.getTeam().setVisible(false);
 			GamePage gamePage = new GamePage(game);
@@ -245,25 +195,16 @@ public class GameController {
 	}
 	
 	
-//	public static void fillTurnOrder(){
-//		p1 = view.getTeam().getP1();
-//		p2 = view.getTeam().getP2();
-//		game = new Game(p1,p2);
-//	}
-//	
-	
 	public static void move(Direction d){
 		try {
 			game.move(d);
 			view.updateBoard();
-			//System.out.println(game.getCurrentChampion().getName());
 			
 			view.updateData();
 			view.getGamePage().updateCurrData();
-		//	view.getGamePage().updatePlayerData(game.getPlayer(game.getCurrentChampion()));
 			
 		} catch (NotEnoughResourcesException e) {
-			String soundName = "error.wav";    
+			String soundName = "assets/error.wav";    
 			AudioInputStream audioInputStream;
 			try {
 				audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
@@ -277,7 +218,7 @@ public class GameController {
 			JOptionPane.showMessageDialog(null, e.getMessage(), "Not Enough Resources", JOptionPane.ERROR_MESSAGE);
 			
 		} catch (UnallowedMovementException e) {
-			String soundName = "error.wav";    
+			String soundName = "assets/error.wav";    
 			AudioInputStream audioInputStream;
 			try {
 				audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
@@ -309,11 +250,8 @@ public class GameController {
 				view.add(winner);
 			}
 			
-			//view.getGamePage().getP1Data().updateData();
-			//view.getGamePage().getP2Data().updateData();
-			//view.getGamePage().updateTargetsData(game.getPlayer((Champion)game.getAttackTarget()));
 		} catch (NotEnoughResourcesException e) {
-			String soundName = "error.wav";    
+			String soundName = "assets/error.wav";    
 			AudioInputStream audioInputStream;
 			try {
 				audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
@@ -326,7 +264,7 @@ public class GameController {
 			next.start();
 			JOptionPane.showMessageDialog(null, e.getMessage(), "Not Enough Resources", JOptionPane.ERROR_MESSAGE);
 		} catch (ChampionDisarmedException e) {
-			String soundName = "error.wav";    
+			String soundName = "assets/error.wav";    
 			AudioInputStream audioInputStream;
 			try {
 				audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
@@ -358,7 +296,7 @@ public class GameController {
 				}
 				
 			} catch (LeaderNotCurrentException e) {
-				String soundName = "error.wav";    
+				String soundName = "assets/error.wav";    
 				AudioInputStream audioInputStream;
 				try {
 					audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
@@ -372,7 +310,7 @@ public class GameController {
 				JOptionPane.showMessageDialog(null, e.getMessage(), "Not Leader", JOptionPane.ERROR_MESSAGE);
 
 			} catch (LeaderAbilityAlreadyUsedException e) {
-				String soundName = "error.wav";    
+				String soundName = "assets/error.wav";    
 				AudioInputStream audioInputStream;
 				try {
 					audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
@@ -404,7 +342,7 @@ public class GameController {
 			}
 			
 		} catch (NotEnoughResourcesException e) {
-			String soundName = "error.wav";    
+			String soundName = "assets/error.wav";    
 			AudioInputStream audioInputStream;
 			try {
 				audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
@@ -417,7 +355,7 @@ public class GameController {
 			next.start();
 			JOptionPane.showMessageDialog(null, e.getMessage(), "Not Enough Resources", JOptionPane.ERROR_MESSAGE);
 		} catch (InvalidTargetException e) {
-			String soundName = "error.wav";    
+			String soundName = "assets/error.wav";    
 			AudioInputStream audioInputStream;
 			try {
 				audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
@@ -430,7 +368,7 @@ public class GameController {
 			next.start();
 			JOptionPane.showMessageDialog(null, e.getMessage(), "Invalid Target", JOptionPane.ERROR_MESSAGE);
 		} catch (AbilityUseException e) {
-			String soundName = "error.wav";    
+			String soundName = "assets/error.wav";    
 			AudioInputStream audioInputStream;
 			try {
 				audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
@@ -465,7 +403,7 @@ public class GameController {
 			}
 			
 		} catch (NotEnoughResourcesException e) {
-			String soundName = "error.wav";    
+			String soundName = "assets/error.wav";    
 			AudioInputStream audioInputStream;
 			try {
 				audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
@@ -479,7 +417,7 @@ public class GameController {
 			JOptionPane.showMessageDialog(null, e.getMessage(), "Not Enough Resources", JOptionPane.ERROR_MESSAGE);
 
 		} catch (InvalidTargetException e) {
-			String soundName = "error.wav";    
+			String soundName = "assets/error.wav";    
 			AudioInputStream audioInputStream;
 			try {
 				audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
@@ -493,7 +431,7 @@ public class GameController {
 			JOptionPane.showMessageDialog(null, e.getMessage(), "Invalid Target", JOptionPane.ERROR_MESSAGE);
 
 		} catch (AbilityUseException e) {
-			String soundName = "error.wav";    
+			String soundName = "assets/error.wav";    
 			AudioInputStream audioInputStream;
 			try {
 				audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
@@ -507,7 +445,7 @@ public class GameController {
 			JOptionPane.showMessageDialog(null, e.getMessage(), "Can't Use Ability", JOptionPane.ERROR_MESSAGE);
 
 		} catch (Exception e) {
-			String soundName = "error.wav";    
+			String soundName = "assets/error.wav";    
 			AudioInputStream audioInputStream;
 			try {
 				audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
@@ -541,7 +479,7 @@ public class GameController {
 			
 			
 		} catch (AbilityUseException e) {
-			String soundName = "error.wav";    
+			String soundName = "assets/error.wav";    
 			AudioInputStream audioInputStream;
 			try {
 				audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
@@ -555,7 +493,7 @@ public class GameController {
 			JOptionPane.showMessageDialog(null, e.getMessage(), "Can't Use Ability", JOptionPane.ERROR_MESSAGE);
 
 		} catch (NotEnoughResourcesException e) {
-			String soundName = "error.wav";    
+			String soundName = "assets/error.wav";    
 			AudioInputStream audioInputStream;
 			try {
 				audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
@@ -569,7 +507,7 @@ public class GameController {
 			JOptionPane.showMessageDialog(null, e.getMessage(), "Not Enough Resources", JOptionPane.ERROR_MESSAGE);
 
 		} catch (InvalidTargetException e) {
-			String soundName = "error.wav";    
+			String soundName = "assets/error.wav";    
 			AudioInputStream audioInputStream;
 			try {
 				audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());

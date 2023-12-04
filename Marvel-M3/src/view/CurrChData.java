@@ -31,15 +31,12 @@ public class CurrChData extends JPanel {
 	public CurrChData(Champion c){
 		
 		this.setLayout(new BorderLayout());
-		this.setOpaque(false);
-		//this.setBackground(new Color(0,0,0,0));
-		
+		this.setOpaque(false);		
 		
 		//--------------------title------------------
 		
 		title = new JLabel("Current Champion:  " + c.getName() + " (" + c.getType() + ")");
 		title.setFont(new Font("Arial", Font.BOLD, 30));
-		//title.setBackground(Color.LIGHT_GRAY);
 		title.setHorizontalAlignment(JLabel.CENTER);
 		title.setPreferredSize(new Dimension(20,50));
 		title.setForeground(Color.white);
@@ -51,7 +48,6 @@ public class CurrChData extends JPanel {
 		
 		JPanel data = new JPanel();
 		data.setOpaque(false);
-		//data.setBackground(new Color(0,0,0,0));
 		data.setLayout(new GridBagLayout());
 		
 		
@@ -93,26 +89,6 @@ public class CurrChData extends JPanel {
 		
 		this.add(data);
 		this.add(img, BorderLayout.EAST);
-		
-		
-//		JPanel effectsPane = new JPanel();
-//		effectsPane.setOpaque(false);
-//		effectsPane.setLayout(new FlowLayout(FlowLayout.LEFT, 20,0));
-//		
-//		JLabel applied = new JLabel("Applied Effects: ");
-//		applied.setFont((new Font("Arial", Font.BOLD, 20)));
-//		effectsPane.add(applied);
-//		
-//		for(int i = 0; i<c.getAppliedEffects().size(); i++){
-//			JLabel effect = new JLabel(c.getAppliedEffects().get(i).toString());
-//			effect.setFont((new Font("Arial", Font.BOLD, 15)));
-//			effect.setHorizontalAlignment(JLabel.CENTER);
-//			effect.setVerticalAlignment(JLabel.CENTER);
-//			effectsPane.add(effect);
-//		}
-//		
-//		this.add(effectsPane, BorderLayout.SOUTH);
-		
 		
 		this.repaint();
 		this.revalidate();

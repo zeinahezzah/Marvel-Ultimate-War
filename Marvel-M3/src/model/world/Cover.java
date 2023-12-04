@@ -19,7 +19,7 @@ public class Cover implements Damageable {
 		
 		location = new Point(x, y);
 		
-		img = new ImageIcon("tree.png");
+		img = new ImageIcon("assets/tree.png");
 		Image im = img.getImage();
 		img = new ImageIcon(im.getScaledInstance(50, 50, Image.SCALE_SMOOTH));
 		

@@ -42,15 +42,10 @@ public class EnterNames extends JPanel{
 		this.setLayout(new BorderLayout());
 		
 		//this.setBackground(Color.gray);
-		ImagePanel img = new ImagePanel("bg.jpg",x,y);
+		ImagePanel img = new ImagePanel("assets/bg.jpg",x,y);
 		img.setLayout(new BorderLayout());
 		this.add(img);
-		
-//		names = new JPanel();
-//		names.setLayout(new GridBagLayout());
-//		names.setBackground(new Color(0,0,0,0));
-//		names.setBounds(0, 0, 200, 600);
-//		names.setPreferredSize(new Dimension(50,200));
+
 		
 		JLabel enterNames = new JLabel("Enter Your Names Below:");
 		enterNames.setFont(new Font("Serif", Font.BOLD, 70));
@@ -159,7 +154,7 @@ public class EnterNames extends JPanel{
 		//next.setOpaque(false);
 		//next.setBackground(new Color(0,0,0,0));
 		
-		Image nextImg = new ImageIcon("nextB.png").getImage();
+		Image nextImg = new ImageIcon("assets/nextB.png").getImage();
 		next.setIcon(new ImageIcon(nextImg.getScaledInstance(250, 150, Image.SCALE_SMOOTH)));
 	
 		

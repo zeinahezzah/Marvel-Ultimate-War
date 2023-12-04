@@ -26,12 +26,10 @@ public class AbilityDetails {
 		final JFrame f = new JFrame();
 		f.setSize(500,400);
 		f.setLayout(new BorderLayout());
-		//f.setBackground(Color.lightGray);
 		
 		f.getContentPane().setBackground(Color.LIGHT_GRAY);
 		((JPanel)f.getContentPane()).setBorder(BorderFactory.createMatteBorder(5, 5, 5, 5, Color.black));
 
-//
 		JPanel p = new JPanel();
 		p.setBackground(MainView.getC());
 		p.setLayout(new GridLayout(2,0));
@@ -43,13 +41,11 @@ public class AbilityDetails {
 		name.setFont(new Font("Arial", Font.BOLD, 30));
 		name.setBackground(MainView.getC());
 		name.setForeground(Color.white);
-		//name.setOpaque(true);
 		name.setHorizontalAlignment(JLabel.CENTER);
 		
 		JLabel type = new JLabel(a.getType());
 		type.setFont(new Font("Arial", Font.BOLD, 25));
 		type.setForeground(Color.white);
-		//type.setOpaque(true);
 		type.setHorizontalAlignment(JLabel.CENTER);
 		
 		p.add(name);
@@ -83,7 +79,6 @@ public class AbilityDetails {
 		okBtn.add(ok);
 		
 		f.add(p, BorderLayout.NORTH);
-		//f.add(type);
 		f.setTitle(a.getName());
 		f.add(attributes);
 		f.add(okBtn, BorderLayout.SOUTH);

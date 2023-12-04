@@ -23,10 +23,7 @@ public class AntiHero extends Champion {
 			targets.get(i).getAppliedEffects().add(s);
 		}
 	}
-//	
-//	public String toString(){
-//		return "AntiHero \n" + super.toString();
-//	}
+
 
 	@Override
 	public String getType() {

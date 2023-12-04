@@ -48,7 +48,7 @@ public class MovePanel extends JPanel implements ActionListener{
 		
 		upBtn = new JButton();
 		
-		ImageIcon imgUp = new ImageIcon("up.png");
+		ImageIcon imgUp = new ImageIcon("assets/up.png");
 		Image imageUp = imgUp.getImage();
 		imgUp = new ImageIcon(imageUp.getScaledInstance(50, 50, Image.SCALE_SMOOTH));
 		
@@ -96,7 +96,7 @@ public class MovePanel extends JPanel implements ActionListener{
 		right.setLayout(new GridBagLayout());
 		
 		rightBtn = new JButton();
-		ImageIcon imgR = new ImageIcon("right.png");
+		ImageIcon imgR = new ImageIcon("assets/right.png");
 		Image imageR = imgR.getImage();
 		imgR = new ImageIcon(imageR.getScaledInstance(50, 50, Image.SCALE_SMOOTH));
 		
@@ -121,7 +121,7 @@ public class MovePanel extends JPanel implements ActionListener{
 		downBtn = new JButton();
 		
 		downBtn = new JButton();
-		ImageIcon imgD = new ImageIcon("down.png");
+		ImageIcon imgD = new ImageIcon("assets/down.png");
 		Image imageD = imgD.getImage();
 		imgD = new ImageIcon(imageD.getScaledInstance(50, 50, Image.SCALE_SMOOTH));
 		
@@ -146,7 +146,7 @@ public class MovePanel extends JPanel implements ActionListener{
 		leftBtn = new JButton();
 		
 		leftBtn = new JButton();
-		ImageIcon imgL = new ImageIcon("left.png");
+		ImageIcon imgL = new ImageIcon("assets/left.png");
 		Image imageL = imgL.getImage();
 		imgL = new ImageIcon(imageL.getScaledInstance(50, 50, Image.SCALE_SMOOTH));
 		
@@ -189,7 +189,7 @@ public class MovePanel extends JPanel implements ActionListener{
 		
 		Game g = new Game(new Player("Rowaida"), new Player("Zeina"));
 		try {
-			g.loadChampions("Champions.csv");
+			g.loadChampions("assets/Champions.csv");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

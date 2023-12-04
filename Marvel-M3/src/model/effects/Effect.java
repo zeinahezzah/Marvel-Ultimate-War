@@ -29,10 +29,6 @@ public abstract class Effect implements Cloneable{
 	public EffectType getType() {
 		return type;
 	}
-
-	
-	
-	//M2
 	
 	public abstract void apply(Champion c);
 	

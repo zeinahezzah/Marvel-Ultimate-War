@@ -37,7 +37,7 @@ public class TeamPage extends JPanel {
 		
 		this.setLayout(new BorderLayout());
 		
-		ImagePanel bg = new ImagePanel("names.jpg",x,y);
+		ImagePanel bg = new ImagePanel("assets/names.jpg",x,y);
 		bg.setLayout(new BorderLayout());
 		
 		this.add(bg);
@@ -227,7 +227,7 @@ public class TeamPage extends JPanel {
 		next.setSize(150, 100);
 		next.setBorderPainted(false);
 		next.setContentAreaFilled(false);
-		Image nextImg = new ImageIcon("nextB.png").getImage();
+		Image nextImg = new ImageIcon("assets/nextB.png").getImage();
 		next.setIcon(new ImageIcon(nextImg.getScaledInstance(180, 125, Image.SCALE_SMOOTH)));
 		next.setFocusable(false);
 		//next.setBackground(Color.white);
@@ -322,7 +322,7 @@ public class TeamPage extends JPanel {
 		f.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		Game g = new Game(new Player("Zeina"), new Player("Rowaida"));
 		try {
-			g.loadChampions("Champions.csv");
+			g.loadChampions("assets/Champions.csv");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

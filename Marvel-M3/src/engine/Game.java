@@ -22,8 +22,6 @@ public class Game  {
 	private boolean secondLeaderAbilityUsed;
 	private final static int BOARDWIDTH = 5;
 	private final static int BOARDHEIGHT = 5;
-	//private Damageable attackTarget;
-
 
 	public Game(Player first, Player second) {
 		firstPlayer = first;
@@ -40,9 +38,7 @@ public class Game  {
 		//secondplayer turns
 		for(int i = 0; i<secondPlayer.getTeam().size(); i++)
 			turnOrder.insert(secondPlayer.getTeam().get(i));
-		
-		//System.out.println(((Champion)turnOrder.peekMin()).getName());
-		
+				
 		placeChampions();
 		placeCovers();
 	}
@@ -155,9 +151,7 @@ public class Game  {
 			c.getAbilities().add(findAbilityByName(content[8]));
 			c.getAbilities().add(findAbilityByName(content[9]));
 			c.getAbilities().add(findAbilityByName(content[10]));
-			
-			//System.out.println(c.getAbilities());
-			
+						
 			availableChampions.add(c);
 			line = br.readLine();
 		}
@@ -242,22 +236,9 @@ public class Game  {
 		return BOARDHEIGHT;
 	}
 	
-	
-	
-	
-	//M2
-	
 	public Champion getCurrentChampion(){
 		return(Champion) turnOrder.peekMin();
 	}
-	
-	/*public Player checkGameOver(){
-		if(turnOrder.size() == 1){
-			Champion c = (Champion)turnOrder.peekMin();
-			return getPlayer(c);
-		}
-		return null;
-	}*/	
 	
 	public Player checkGameOver(){
 		if(firstPlayer.getTeam().size() == 0)
@@ -308,7 +289,6 @@ public class Game  {
 			c.setLocation(newPoint);	//update champion's location attribute
 			board[x][y] = null;		//remove champion from old point
 			c.setCurrentActionPoints(c.getCurrentActionPoints() - 1);	//deduct action point
-			//listener.BoardUpdated(x,y);
 		}
 	}
 		
@@ -317,9 +297,7 @@ public class Game  {
 	public void attack(Direction d) throws  NotEnoughResourcesException, ChampionDisarmedException{
 		Champion c = getCurrentChampion();
 		Damageable x = getFirstCell(d, c);	//get target that will be attacked
-		
-		//System.out.println(x);
-		
+				
 		if(checkEffect(c,"Disarm"))		//Disarmed can't attack
 			throw new ChampionDisarmedException("You can't attack while disarmed");
 	
@@ -330,9 +308,7 @@ public class Game  {
 		//x!= null -> check that there is a possible target in that direction
 		//distance <=c.getAttackRange() -> make sure that the found target is in range
 		if(x != null && distance(c.getLocation(), x.getLocation()) <= c.getAttackRange()){
-			
-			//attackTarget = x;
-		
+					
 			if(x instanceof Cover)	//cover HP deducted normally
 				x.setCurrentHP(x.getCurrentHP() - c.getAttackDamage());
 
@@ -504,29 +480,6 @@ public class Game  {
 					if(i >-1 && i<5 && j >-1 && j<5){	//in case champion is on edge of board
 					if(board[i][j] != null && !(i==x && j==y)){		//non-empty cell that is not the champion's current cell
 						Damageable target = (Damageable) board[i][j];	
-						/*
-						if(a instanceof DamagingAbility){
-							if(getEnemyPlayer(c).getTeam().contains(target) || target instanceof Cover){
-								targets.add(target);
-							}
-						}
-						
-						else if(a instanceof HealingAbility){
-							if(getPlayer(c).getTeam().contains(target))
-								targets.add(target);
-						}
-						
-						else if(a instanceof CrowdControlAbility){
-							if (((CrowdControlAbility)a).getEffect().getType().equals(EffectType.BUFF)){
-								if(getPlayer(c).getTeam().contains(target))
-									targets.add(target);
-							}
-							else
-								if(getEnemyPlayer(c).getTeam().contains(target)){
-									targets.add(target);
-								}	
-						}
-						*/
 						addTargets(c,target,a,targets);	//add target based on ability type
 					}
 				}
@@ -705,11 +658,6 @@ public class Game  {
 	
 	
 	public static Player getPlayer(Champion c){	//returns which player the given champion belongs to
-		/*for(int i = 0; i < firstPlayer.getTeam().size(); i++){	//traverse firstplayer's team
-			if(c.equals(firstPlayer.getTeam().get(i))){		//if champion is found
-				return firstPlayer;
-			}
-		}*/
 		if(firstPlayer.getTeam().contains(c))	//check if c is on first player's team
 			return firstPlayer;
 		else		//c is in second player's team
@@ -807,43 +755,6 @@ public class Game  {
 	 }
 	 
 	 
-//	 public void endTurn(){		//ends champion's turn and moves onto next champion
-//		 
-//		 turnOrder.remove();	//remove champion whose turn just ended
-//		 
-//		 if(turnOrder.isEmpty()){	//round is over
-//			 if(checkGameOver() == null)	 //no winner yet
-//				 prepareChampionTurns();	//prepare next round's turns
-//			 
-//			 else{							//one of the players won -> game over
-//				// System.out.println("GAME OVER! " + checkGameOver() + " Wins!");	//checkGameOver() -> returns name of winning player
-//				 return;	//exit method no need to continue
-//			 }
-//		 }
-//		 
-//		 //game is still going and new turnOrder prepared
-//		 
-//		 while(((Champion)turnOrder.peekMin()).getCondition().equals(Condition.INACTIVE) && !turnOrder.isEmpty()){
-//			 turnOrder.remove();	//skip INACTIVE champion's turns until active champion found
-//		 }
-//		 
-//		 for(int i = 0; i<firstPlayer.getTeam().size(); i++){	//update first player's champions timers
-//			 Champion c = firstPlayer.getTeam().get(i);
-//			 updateAbilities(c);	//updates abilities cooldowns
-//			 updateEffects(c);		//updates effects durations
-//			 c.setCurrentActionPoints(c.getMaxActionPointsPerTurn());	//resets action point per turn to initial max
-//		 }
-//		 
-//		 for(int i = 0; i<secondPlayer.getTeam().size(); i++){	//update second player's champions timers
-//			 Champion c = secondPlayer.getTeam().get(i);
-//			 updateAbilities(c);	//updates abilities cooldowns
-//			 updateEffects(c);		//updates effects durations
-//			 c.setCurrentActionPoints(c.getMaxActionPointsPerTurn());	//resets action point per turn to initial max
-//		 }
-//		 
-//	 }
-	 
-	 
 	public void endTurn() {
 			turnOrder.remove();
 			if (turnOrder.isEmpty())
@@ -918,18 +829,5 @@ public class Game  {
 					 turnOrder.insert(c); 
 		 }
 	 }
-	 
-	 
-
-//	public Damageable getAttackTarget() {
-//		return attackTarget;
-//	}
-//
-//	@Override
-//	public void moved() {
-//		//listener.BoardUpdated();
-//		
-//	}
-	
 	
 }

@@ -21,15 +21,11 @@ public class Villain extends Champion {
 		//assuming target is the enemy teams
 		for(int i =0; i<targets.size(); i++){
 			Champion c = targets.get(i);
-			//if(c.getCurrentHP() < 0.3*c.getMaxHP())
 				c.setCondition(Condition.KNOCKEDOUT);
 				c.setCurrentHP(0);
 		} 
 	}
 	
-//	public String toString(){
-//		return "Villain \n" + super.toString();
-//	}
 
 	@Override
 	public String getType() {

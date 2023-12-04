@@ -21,7 +21,7 @@ public class WinPage extends JPanel{
 		this.setLayout(new GridBagLayout());
 		this.setBackground(new Color(0x090e22));
 		
-		ImagePanel bg = new ImagePanel("gameover2.jpg", x-250, y-250);
+		ImagePanel bg = new ImagePanel("assets/gameover2.jpg", x-250, y-250);
 		bg.setLayout(new BorderLayout());
 		bg.setPreferredSize(new Dimension(x-250, y-250));
 		
@@ -88,7 +88,7 @@ public class WinPage extends JPanel{
 		
 		Game g = new Game(new Player("Zeina"), new Player("Rowaida"));
 		try {
-			g.loadChampions("Champions.csv");
+			g.loadChampions("assets/Champions.csv");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

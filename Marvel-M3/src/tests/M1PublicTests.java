@@ -2889,13 +2889,13 @@ public class M1PublicTests {
 		Object createdGame = gameConstructor.newInstance(firstPlayer, secondPlayer);
 
 		Method m = createdGame.getClass().getMethod("loadAbilities", String.class);
-		m.invoke(createdGame, "Abilities.csv");
+		m.invoke(createdGame, "assets/Abilities.csv");
 		Field field = Class.forName(gamePath).getDeclaredField("availableAbilities");
 		field.setAccessible(true);
 		ArrayList<Object> availableAbilities = (ArrayList<Object>) field.get(createdGame);
 
 		Method m2 = createdGame.getClass().getMethod("loadChampions", String.class);
-		m2.invoke(createdGame, "Champions.csv");
+		m2.invoke(createdGame, "assets/Champions.csv");
 
 		ArrayList<Object> champions = new ArrayList<Object>();
 
@@ -2910,7 +2910,7 @@ public class M1PublicTests {
 
 		String line = "";
 		try {
-			BufferedReader br = new BufferedReader(new FileReader("Champions.csv"));
+			BufferedReader br = new BufferedReader(new FileReader("assets/Champions.csv"));
 			while ((line = br.readLine()) != null) {
 				String[] row = line.split(",");
 

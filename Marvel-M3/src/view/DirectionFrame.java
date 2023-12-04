@@ -52,8 +52,6 @@ public class DirectionFrame extends JFrame {
 		
 		JLabel select = new JLabel("Select a Direction: ");
 		select.setFont(new Font("Arial", Font.BOLD, 20));
-		//select.setForeground(Color.white);
-		//select.setOpaque(true);
 		select.setHorizontalAlignment(JLabel.CENTER);
 		
 		p.add(name);
@@ -62,7 +60,6 @@ public class DirectionFrame extends JFrame {
 		
 		JPanel dir = new JPanel();
 		dir.setOpaque(false);
-		//dir.setBackground(new Color(0,0,0,0));
 		dir.setLayout(new GridBagLayout());
 		
 		options = new JComboBox(Direction.values());
@@ -70,18 +67,12 @@ public class DirectionFrame extends JFrame {
 		options.setPreferredSize(new Dimension(300,40));
 		options.setFont(new Font("Arial", Font.PLAIN, 20));
 		
-		//options.setBackground(Color.LIGHT_GRAY);
 		options.setOpaque(false);
 		
 		dir.add(options);
 		
-		
-	
-		//p.add(name);
-		
 		JPanel okBtn = new JPanel();
 		okBtn.setOpaque(false);
-		//okBtn.setBackground(Color.LIGHT_GRAY);
 		okBtn.setLayout(new GridBagLayout());
 		okBtn.setPreferredSize(new Dimension(20,80));
 		
@@ -106,7 +97,6 @@ public class DirectionFrame extends JFrame {
 		
 		this.add(p, BorderLayout.NORTH);
 		this.add(dir);
-		//f.add(type);
 		this.setTitle(a.getName());
 		this.add(okBtn, BorderLayout.SOUTH);
 		this.setLocationRelativeTo(null);

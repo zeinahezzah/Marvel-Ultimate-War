@@ -50,27 +50,26 @@ public class ChampionsPage extends JPanel implements ActionListener{
 	private JTextArea attributes;
 	private int index;
 	private static int pIndex;
-	
-	//private Player current;
-	
+		
 	private JLabel image = new JLabel();
 	private JLabel name = new JLabel();
 	
 	private static Game g;
 	private static ArrayList<JButton> buttons;
 	private static ArrayList<Champion> champs;
-	//private int counter = 0;
 
 	public ChampionsPage(final Game g){
 		
 		Toolkit t = Toolkit.getDefaultToolkit();
-		int x = (int) t.getScreenSize().getWidth();
-		int y = (int) t.getScreenSize().getHeight();
+		final int x = (int) t.getScreenSize().getWidth();
+		final int y = (int) t.getScreenSize().getHeight();
+		
+		System.out.println(x + "   " + y);
 		
 		this.g = g;
 		
 	this.setLayout(new BorderLayout());
-	ImagePanel bg = new ImagePanel("names.jpg",x,y);
+	ImagePanel bg = new ImagePanel("assets/names.jpg",x,y);
 	bg.setLayout(new BorderLayout());
 	this.add(bg);
 	
@@ -91,9 +90,6 @@ public class ChampionsPage extends JPanel implements ActionListener{
 	abilities.setOpaque(false);
 	titlePane.setOpaque(false);
 	characters.setOpaque(false);
-	
-	//champion.setBackground(Color.gray);
-	//titlePane.setBackground(new Color(0xB80523));
 	
 	bg.add(champion, BorderLayout.EAST);
 	bg.add(titlePane, BorderLayout.NORTH);
@@ -124,7 +120,6 @@ public class ChampionsPage extends JPanel implements ActionListener{
 	
 	for(int i = 0; i < champs.size(); i++){
 		final JButton b = new JButton();	//champs.get(i).getName()
-		//final ImageButton b = new ImageButton(champs.get(i).getIcon().getImage(), champs.get(i).getImg().getImage());
 		b.setFont(new Font("Serif", Font.BOLD, 20));
 		b.setToolTipText(champs.get(i).toString());
 		b.setBorderPainted(false);
@@ -132,30 +127,22 @@ public class ChampionsPage extends JPanel implements ActionListener{
 		Image img2 = champs.get(i).getImg().getImage();
 		Image icon2 = champs.get(i).getIcon().getImage();
 		
-		final ImageIcon img = new ImageIcon(img2.getScaledInstance(280, 290, Image.SCALE_SMOOTH));
-		final ImageIcon icon = new ImageIcon(icon2.getScaledInstance(280, 290, Image.SCALE_SMOOTH));
+		final ImageIcon img = new ImageIcon(img2.getScaledInstance(x/10, y/5, Image.SCALE_SMOOTH));
+		final ImageIcon icon = new ImageIcon(icon2.getScaledInstance(x/10, y/5, Image.SCALE_SMOOTH));
 		
 		b.setOpaque(false);
 		b.setBackground(new Color(0,0,0,0));
 		b.setIcon(icon);
 		b.setRolloverIcon(img);
 		b.setPressedIcon(img);
-//		
-//		b.setIcon(img);
-//		b.setRolloverIcon(icon);
-//		b.setPressedIcon(icon);
-//		
-		//b.setDisabledIcon(icon);
-		//b.setHorizontalTextPosition(JButton.CENTER);
-		//b.setVerticalTextPosition(JButton.BOTTOM);
+		
 		b.setFocusable(false);
 		buttons.add(b);
 		characters.add(b);
 		
 		pIndex = 0;
 		
-		//System.out.println(characters.getSize());
-		//b.setToolTipText("<html><font face=\"sansserif\" color=\"green\">first line<br>second line</font></html>");
+	
 		b.addActionListener(new ActionListener(){
 
 			@Override
@@ -169,7 +156,7 @@ public class ChampionsPage extends JPanel implements ActionListener{
 					JButton b2 = buttons.get(pIndex);
 					
 					Image pImg = champs.get(pIndex).getIcon().getImage();
-					ImageIcon pIcon = new ImageIcon(pImg.getScaledInstance(280, 290, Image.SCALE_SMOOTH));
+					ImageIcon pIcon = new ImageIcon(pImg.getScaledInstance(x/10, y/5, Image.SCALE_SMOOTH));
 
 				
 					if(addToTeam.isEnabled()){
@@ -187,9 +174,7 @@ public class ChampionsPage extends JPanel implements ActionListener{
 				name.setPreferredSize(new Dimension(30,80));
 				name.setText(c.getName() + " (" + c.getType() + ")");
 				name.setFont(new Font("Verdana", Font.BOLD, 30));
-				//name.setBackground(new Color(0x73bbf2));
 				name.setForeground(Color.white);
-				//name.setOpaque(true);
 				champion.add(name, BorderLayout.NORTH);
 				
 				
@@ -273,12 +258,10 @@ public class ChampionsPage extends JPanel implements ActionListener{
 	chData.setOpaque(false);
 	
 	chData.setLayout(new BorderLayout());
-	//chData.setBackground(Color.gray);
 	
 	//-----------buttons--------------
 	
 	buttonPane = new JPanel();
-	//buttonPane.setBackground(Color.gray);
 	buttonPane.setOpaque(false);
 	buttonPane.setPreferredSize(new Dimension(20,120));
 	
@@ -294,7 +277,7 @@ public class ChampionsPage extends JPanel implements ActionListener{
 				final ImageIcon img = new ImageIcon(img2.getScaledInstance(280, 290, Image.SCALE_SMOOTH));
 				final ImageIcon icon = new ImageIcon(icon2.getScaledInstance(280, 290, Image.SCALE_SMOOTH));
 				
-				String soundName = "next.wav";    
+				String soundName = "assets/next.wav";    
 				AudioInputStream audioInputStream;
 				try {
 					audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
@@ -314,7 +297,6 @@ public class ChampionsPage extends JPanel implements ActionListener{
 					buttons.get(index).setIcon(img);
 					buttons.get(index).setEnabled(false);
 					addToTeam.setEnabled(false);
-					//System.out.println(champs.get(index).getName());
 					
 					if(g.getFirstPlayer().getTeam().size() == 3)
 						JOptionPane.showMessageDialog(null, g.getSecondPlayer().getName() + ", Select your champions", "Player 2", JOptionPane.INFORMATION_MESSAGE);
@@ -324,11 +306,10 @@ public class ChampionsPage extends JPanel implements ActionListener{
 					buttons.get(index).setIcon(img);
 					buttons.get(index).setEnabled(false);
 					addToTeam.setEnabled(false);
-					//System.out.println(champs.get(index).getName());
 					
 				}
 				else{
-					String soundName2 = "error.wav";    
+					String soundName2 = "assets/error.wav";    
 					AudioInputStream audioInputStream2;
 					try {
 						audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
@@ -342,12 +323,6 @@ public class ChampionsPage extends JPanel implements ActionListener{
 					
 					JOptionPane.showMessageDialog(null, "Team Full!", "ERROR", JOptionPane.ERROR_MESSAGE);
 				}
-//				if(g.getSecondPlayer().getTeam().size() == 3){
-//					setVisible(false);
-//					TeamPage c = new TeamPage(g);
-//					c.setVisible(true);
-//					add(c);
-//				}
 			}
 	});;
 	
@@ -355,10 +330,9 @@ public class ChampionsPage extends JPanel implements ActionListener{
 	addToTeam.setSize(200, 150);
 	addToTeam.setBorderPainted(false);
 	addToTeam.setContentAreaFilled(false);
-	Image addImg = new ImageIcon("add.png").getImage();
+	Image addImg = new ImageIcon("assets/add.png").getImage();
 	addToTeam.setIcon(new ImageIcon(addImg.getScaledInstance(200, 130, Image.SCALE_SMOOTH)));
 
-	//addToTeam.setBackground(Color.white);
 	buttonPane.add(addToTeam);
 
 	
@@ -366,26 +340,22 @@ public class ChampionsPage extends JPanel implements ActionListener{
 	next.setSize(150, 100);
 	next.setBorderPainted(false);
 	next.setContentAreaFilled(false);
-	Image nextImg = new ImageIcon("nextB.png").getImage();
+	Image nextImg = new ImageIcon("assets/nextB.png").getImage();
 	next.setIcon(new ImageIcon(nextImg.getScaledInstance(180, 125, Image.SCALE_SMOOTH)));
 
 	
-	//next.setBackground(Color.white);
 	buttonPane.add(next);
 	
 	
 	champion.add(buttonPane, BorderLayout.SOUTH);
+	
 	//----------------attributes----------
-	
-	
 	
 	attributes = new JTextArea();
 	attributes.setEditable(false);
 	attributes.setOpaque(false);
 	attributes.setFont(new Font("Serif", Font.BOLD, 30));
 	attributes.setForeground(Color.white);
-	//attributes.setBackground(Color.gray);
-
 	
 	this.revalidate();
 	this.repaint();
@@ -432,10 +402,6 @@ public class ChampionsPage extends JPanel implements ActionListener{
 	public static ArrayList<JButton> getButtons() {
 		return buttons;
 	}
-	
-//	public static Game getG() {
-//		return g;
-//	}
 
 	public static ArrayList<Champion> getChamps() {
 		return champs;
@@ -454,17 +420,6 @@ public class ChampionsPage extends JPanel implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		int i;
 		
-//		if (e.getSource() instanceof AddButton){
-//			if(g.getFirstPlayer().getTeam().size() <3){
-//				g.getFirstPlayer().getTeam().add(champs.get(index));
-//				System.out.println(champs.get(index).getName());
-//			}
-//			else{
-//				g.getSecondPlayer().getTeam().add(champs.get(index));
-//				System.out.println(champs.get(index).getName());
-//			}
-//		}	
-		
 		 if(e.getSource() instanceof JButton){
 		
 			 JButton btn = (JButton) e.getSource();
@@ -476,14 +431,10 @@ public class ChampionsPage extends JPanel implements ActionListener{
 				}
 			
 			
-			//displayedChamp = champs.get(index);
-			
 			name.setHorizontalAlignment(JLabel.CENTER);
 			name.setPreferredSize(new Dimension(30,80));
 			name.setText(champs.get(i).getName());
 			name.setFont(new Font("Serif", Font.BOLD, 30));
-			//name.setBackground(new Color(0x73bbf2));
-			//name.setForeground(Color.white);
 			name.setOpaque(false);
 			champion.add(name, BorderLayout.NORTH);
 			
@@ -503,39 +454,11 @@ public class ChampionsPage extends JPanel implements ActionListener{
 			
 			chData.add(attributes);
 			chData.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-//			if(current == g.getFirstPlayer()){
-//				g.getFirstPlayer().getTeam().add(champs.get(i));
-//				System.out.println(champs.get(index).getName());
-//				counter++;
-//				if(counter == 3)
-//					current = g.getSecondPlayer();
-//			}
-//			else if (current == g.getSecondPlayer()){
-//				g.getSecondPlayer().getTeam().add(champs.get(i));
-//				System.out.println(champs.get(index).getName());
-//			}
-			//JLabel cur = new JLabel(btn.getText());
-			//attributes.add(cur , BorderLayout.CENTER);
 		}
-//		else if (e.getSource() instanceof AddButton){
-//				if(g.getFirstPlayer().getTeam().size() <3){
-//					g.getFirstPlayer().getTeam().add(champs.get(index));
-//					System.out.println(champs.get(index).getName());
-//				}
-//				else{
-//					g.getSecondPlayer().getTeam().add(champs.get(index));
-//					System.out.println(champs.get(index).getName());
-//				}
-//		}
 		 
 		 champion.add(chData, BorderLayout.CENTER);
 	}
-	
-	
-//	public static Game setTeams(){
-//		return g;
-//	}
-	
+
 	
 	public static void main(String[] args) {
 		JFrame f = new JFrame();
@@ -545,8 +468,8 @@ public class ChampionsPage extends JPanel implements ActionListener{
 		
 		Game g = new Game(new Player("Zeina"), new Player("Rowaida"));
 		try {
-			g.loadAbilities("Abilities.csv");
-			g.loadChampions("Champions.csv");
+			g.loadAbilities("assets/Abilities.csv");
+			g.loadChampions("assets/Champions.csv");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

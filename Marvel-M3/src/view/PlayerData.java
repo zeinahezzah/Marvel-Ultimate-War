@@ -60,10 +60,10 @@ public class PlayerData extends JPanel {
 //		else
 //			color = new Color(0xfdbebe);
 		if(p.equals(g.getFirstPlayer())){
-			img = "panelx.png";
+			img = "assets/panelx.png";
 		}
 		else
-			img = "panel2x.png";
+			img = "assets/panel2x.png";
 		
 		color = Color.white;
 		

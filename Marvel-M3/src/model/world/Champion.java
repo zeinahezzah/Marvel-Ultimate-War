@@ -51,50 +51,50 @@ public abstract class Champion implements Damageable, Comparable{
 		
 		
 		switch(name){
-		case "Captain America": img = new ImageIcon("ca.png"); 
-			icon = new ImageIcon("CA2W.png"); break;
+		case "Captain America": img = new ImageIcon("assets/ca.png"); 
+			icon = new ImageIcon("assets/CA2W.png"); break;
 		
-		case "Deadpool": img = new ImageIcon("dp.png"); 
-			icon = new ImageIcon("DP2W.png"); break;
+		case "Deadpool": img = new ImageIcon("assets/dp.png"); 
+			icon = new ImageIcon("assets/DP2W.png"); break;
 		
-		case "Dr Strange": img = new ImageIcon("ds.png"); 
-			icon = new ImageIcon("DS2W.png"); break;
+		case "Dr Strange": img = new ImageIcon("assets/ds.png"); 
+			icon = new ImageIcon("assets/DS2W.png"); break;
 		
-		case "Electro": img = new ImageIcon("el.png"); 
-			icon = new ImageIcon("EL2.png"); break;
+		case "Electro": img = new ImageIcon("assets/el.png"); 
+			icon = new ImageIcon("assets/EL2.png"); break;
 		
-		case "Ghost Rider": img = new ImageIcon("gr.png"); 
-			icon = new ImageIcon("GS2W.png"); break;
+		case "Ghost Rider": img = new ImageIcon("assets/gr.png"); 
+			icon = new ImageIcon("assets/GS2W.png"); break;
 		
-		case "Hela": img = new ImageIcon("he.png");
-			icon = new ImageIcon("HL2W.png"); break;
+		case "Hela": img = new ImageIcon("assets/he.png");
+			icon = new ImageIcon("assets/HL2W.png"); break;
 
-		case "Hulk": img = new ImageIcon("hu.png"); 
-			icon = new ImageIcon("HU2W.png"); break;
+		case "Hulk": img = new ImageIcon("assets/hu.png"); 
+			icon = new ImageIcon("assets/HU2W.png"); break;
 
-		case "Iceman": img = new ImageIcon("im (1).png");
-			icon = new ImageIcon("ICE2W.png"); break;
+		case "Iceman": img = new ImageIcon("assets/im (1).png");
+			icon = new ImageIcon("assets/ICE2W.png"); break;
 
-		case "Ironman": img = new ImageIcon("ir.png");
-			icon = new ImageIcon("IR2W.png"); break;
+		case "Ironman": img = new ImageIcon("assets/ir.png");
+			icon = new ImageIcon("assets/IR2W.png"); break;
 
-		case "Loki": img = new ImageIcon("lo.png"); 
-			icon = new ImageIcon("LK2W.png"); break;
+		case "Loki": img = new ImageIcon("assets/lo.png"); 
+			icon = new ImageIcon("assets/LK2W.png"); break;
 
-		case "Quicksilver": img = new ImageIcon("qs.png");
-			icon = new ImageIcon("QS2W.png"); break;
+		case "Quicksilver": img = new ImageIcon("assets/qs.png");
+			icon = new ImageIcon("assets/QS2W.png"); break;
 
-		case "Spiderman": img = new ImageIcon("sp.png");
-			icon = new ImageIcon("SP2W.png"); break;
+		case "Spiderman": img = new ImageIcon("assets/sp.png");
+			icon = new ImageIcon("assets/SP2W.png"); break;
 
-		case "Thor": img = new ImageIcon("th.png"); 
-			icon = new ImageIcon("TR2W.png"); break;
+		case "Thor": img = new ImageIcon("assets/th.png"); 
+			icon = new ImageIcon("assets/TR2W.png"); break;
 
-		case "Venom": img = new ImageIcon("ve.png");
-			icon = new ImageIcon("VN2W.png"); break;
+		case "Venom": img = new ImageIcon("assets/ve.png");
+			icon = new ImageIcon("assets/VN2W.png"); break;
 
-		case "Yellow Jacket": img = new ImageIcon("yj.png");
-			icon = new ImageIcon("YJ2W.png"); break;
+		case "Yellow Jacket": img = new ImageIcon("assets/yj.png");
+			icon = new ImageIcon("assets/YJ2W.png"); break;
 
 
 	

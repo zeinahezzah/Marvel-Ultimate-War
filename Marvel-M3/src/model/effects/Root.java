@@ -24,9 +24,7 @@ public class Root extends Effect {
 	public void remove(Champion c) {
 		if(c.getCondition().equals(Condition.ROOTED))	//if champion is rooted -> set back to active
 			c.setCondition(Condition.ACTIVE);
-		
-		//c.getAppliedEffects().remove(this);
-		
+				
 		for(int i = 0; i<c.getAppliedEffects().size(); i++){		//check applied effects in case of multiple instance of root effect
 				if(c.getAppliedEffects().get(i) instanceof Root){	//if the champion still has another root effect
 					

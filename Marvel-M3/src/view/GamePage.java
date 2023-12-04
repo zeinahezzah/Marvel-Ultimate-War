@@ -121,7 +121,7 @@ public class GamePage extends JPanel implements ActionListener{
 		
 		//-----------------bg---------------------------
 		
-		ImagePanel img = new ImagePanel("names.jpg", x, y);
+		ImagePanel img = new ImagePanel("assets/names.jpg", x, y);
 		img.setLayout(new BorderLayout());
 		this.add(img);
 		
@@ -304,7 +304,7 @@ public class GamePage extends JPanel implements ActionListener{
 		
 		endBtn.setBorderPainted(false);
 		endBtn.setContentAreaFilled(false);
-		Image endImg = new ImageIcon("end2.png").getImage();
+		Image endImg = new ImageIcon("assets/end2.png").getImage();
 		endBtn.setIcon(new ImageIcon(endImg.getScaledInstance(250, 150, Image.SCALE_SMOOTH)));
 	
 		
@@ -400,8 +400,8 @@ public class GamePage extends JPanel implements ActionListener{
 		
 		Game g = new Game(new Player("Rowaida"), new Player("Zeina"));
 		try {
-			g.loadAbilities("Abilities.csv");
-			g.loadChampions("Champions.csv");
+			g.loadAbilities("assets/Abilities.csv");
+			g.loadChampions("assets/Champions.csv");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
