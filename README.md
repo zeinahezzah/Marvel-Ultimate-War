@@ -13,7 +13,7 @@ Marvel: Ultimate War is an exciting Java-based 2-player battle game that brings 
 
 🎮 Intuitive Controls: Enjoy a smooth and user-friendly interface that allows for seamless gameplay and intuitive control over your team's actions.
 
-# -------------------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 
 🚀 Tech Stack:
 
