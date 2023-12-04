@@ -1,7 +1,7 @@
 # Marvel-Ultimate-War
 Marvel: Ultimate War is an exciting Java-based 2-player battle game that brings the epic battles of Marvel superheroes to life. In this game, two players go head-to-head, strategically selecting their team members from a comprehensive list of iconic Marvel superheroes. Each hero possesses unique abilities, powers, and special attacks, allowing players to create their dream team and devise winning strategies.
 
-🦸‍♂️ Key Features:
+## 🦸‍♂️ Key Features:
 
 🌐 Team Selection: Dive into a rich collection of Marvel superheroes, each with unique powers and abilities. Strategically assemble your dream team to overpower your opponent.
 
@@ -13,9 +13,8 @@ Marvel: Ultimate War is an exciting Java-based 2-player battle game that brings 
 
 🎮 Intuitive Controls: Enjoy a smooth and user-friendly interface that allows for seamless gameplay and intuitive control over your team's actions.
 
-# ------------------------------------------------------------------------------
 
-🚀 Tech Stack:
+## 🚀 Tech Stack:
 
 ☕ Java: The backbone of our game, providing the foundation for seamless and robust gameplay.
 
